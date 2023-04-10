@@ -15,15 +15,12 @@ jobs:
      uses: actions/setup-dotnet@v3
      with: 
        dotnet-version: ' 6.0.x '
-       
-   - name: Restore
-     run: dotnet restore ./BookStoreApp/BookStoreApp.sln
-     
+   
    - name: Build
-     run: dotnet build ./BookStoreApp/BookStoreApp.sln --configuration Release --no restore
+     run: dotnet build ./BookStoreApp/BookStoreApp.sln --configuration Release 
      
    - name: Publish
-     run: dotnet publish ./BookStoreApp/BookStoreApp.sln --configuration Release --no restore
+     run: dotnet publish ./BookStoreApp/BookStoreApp.sln --configuration Release 
      
      
    
