@@ -4,6 +4,10 @@ on:
   push:
    branches:
            - main
+ 
+env:
+ AZURE_WEBAPP_NAME: appbookstore
+ AZURE_WEBAPP_PACKAGE_PATH: " ./publish "
            
 jobs:
  publish:
@@ -21,6 +25,16 @@ jobs:
      
    - name: Publish
      run: dotnet publish ./BookStoreApp/BookStoreApp.sln --configuration Release 
+     
+   - name: Deployment
+     uses: actions/webapps-deploy@v2
+     
+     with: 
+       app-name: ${{ env.AZURE_WEBAPP_NAME }}
+       publish-profile:  ${{ secrets.PUBLISH_PROFILE }}
+       package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+       
+       
      
      
    
