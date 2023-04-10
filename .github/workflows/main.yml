@@ -7,7 +7,7 @@ on:
  
 env:
  AZURE_WEBAPP_NAME: bookstoreapp
- AZURE_WEBAPP_PACKAGE_PATH: " ./publish "
+ AZURE_WEBAPP_PACKAGE_PATH: " ./BookStoreApp "
            
 jobs:
  publish:
