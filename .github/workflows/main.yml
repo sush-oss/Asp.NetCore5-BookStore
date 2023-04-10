@@ -24,7 +24,7 @@ jobs:
      run: dotnet build ./BookStoreApp/BookStoreApp.sln --configuration Release 
      
    - name: Test with the dotnet CLI
-     run: dotnet test
+     run: dotnet test ./BookStoreApp/BookStoreApp.sln --configuration Release
      
    - name: Publish
      run: dotnet publish ./BookStoreApp/BookStoreApp.sln --configuration Release 
